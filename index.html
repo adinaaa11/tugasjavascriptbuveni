@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Pendaftaran Ekstrakurikuler</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    
+    function submitForm() {
+      var nama = document.getElementById("nama").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var noTelepon = document.getElementById("no-telepon").value.trim();
+      var jenisEkstrakurikuler = document.getElementById("jenis-ekstrakurikuler").value;
+      var tahunMasuk = document.getElementById("tahun-masuk").value.trim();
+      var tahunLulus = document.getElementById("tahun-lulus").value.trim();
+
+      // Validasi sederhana
+      var isValid = true;
+      var errors = [];
+
+      if (nama === "") {
+        isValid = false;
+        errors.push("Nama harus diisi. ");
+      }
+
+      if (email === "") {
+        isValid = false;
+        errors.push("Email harus diisi. ");
+      } else if (!email.includes("@")) {
+        isValid = false;
+        errors.push("Email harus berupa alamat email yang valid. ");
+      }
+
+      if (noTelepon === "") {
+        isValid = false;
+        errors.push("Nomor Telepon harus diisi. ");
+      } else if (noTelepon.length !== 12) {
+        isValid = false;
+        errors.push("Nomor Telepon harus berupa angka dan memiliki panjang 12 digit. ");
+      }
+
+      if (jenisEkstrakurikuler === "") {
+        isValid = false;
+        errors.push("Jenis Ekstrakurikuler harus diisi. ");
+      }
+
+      if (tahunMasuk === "") {
+        isValid = false;
+        errors.push("Tahun Masuk harus diisi. ");
+      } else if (isNaN(tahunMasuk)) {
+        isValid = false;
+        errors.push("Tahun Masuk harus berupa angka. ");
+      }
+
+      if (tahunLulus === "") {
+        isValid = false;
+        errors.push("Tahun Lulus harus diisi. ");
+      } else if (isNaN(tahunLulus)) {
+        isValid = false;
+        errors.push("Tahun Lulus harus berupa angka. ");
+      }
+
+      if (isValid) {
+        tahunMasuk = parseInt(tahunMasuk);
+        tahunLulus = parseInt(tahunLulus);
+
+        if (tahunMasuk > tahunLulus) {
+          isValid = false;
+          errors.push("Tahun Lulus harus lebih besar atau sama dengan Tahun Masuk. ");
+        }
+        
+      }
+
+      // Menampilkan pesan error jika ada
+      if (!isValid) {
+        var errorHtml = "";
+        errors.forEach(function(error) {
+          errorHtml += "" + error + "";
+        });
+        errorHtml += "";
+
+        // Membuat pop-up dengan alert
+        alert(errorHtml);
+
+        document.getElementById("errors").innerHTML = "";
+        return;
+      } else {
+          alert("Kekirim")
+        }
+        return true
+        
+      // Jika validasi sukses, tampilkan hasil
+      // var hasil = "Nama: " + nama + "<br>" +
+      //             "Email: " + email + "<br>" +
+      //             "Nomor Telepon: " + noTelepon + "<br>" +
+      //             "Jenis Ekstrakurikuler: " + jenisEkstrakurikuler + "<br>" +
+      //             "Tahun Masuk: " + tahunMasuk + "<br>" +
+      //             "Tahun Lulus: " + tahunLulus;
+
+      // document.getElementById("hasil").innerHTML = hasil;
+    }
+  </script>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Formulir Pendaftaran Ekstrakurikuler</h2>
+  <form id="pendidikan-form">
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama" name="nama">
+    <span id="error-nama" class="error"></span>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span id="error-email" class="error"></span>
+
+    <label for="no-telepon">Nomor Telepon:</label>
+    <input type="text" id="no-telepon" name="no-telepon">
+    <span id="error-no-telepon" class="error"></span>
+
+    <label for="jenis-ekstrakurikuler">Jenis Ekstrakurikuler:</label>
+    <select id="jenis-ekstrakurikuler" name="jenis-ekstrakurikuler">
+      <option value="">Pilih Jenis Ekstrakurikuler</option>
+      <option value="Bola Basket">Bola Basket</option>
+      <option value="Sepak Bola">Sepak Bola</option>
+      <option value="Karate">Karate</option>
+      <option value="Pramuka">Pramuka</option>
+      <option value="Pramuka">PASKANUSA</option>
+    </select>
+    <span id="error-jenis-ekstrakurikuler" class="error"></span>
+
+    <label for="tahun-masuk">Tahun Masuk:</label>
+    <input type="number" id="tahun-masuk" name="tahun-masuk">
+    <span id="error-tahun-masuk" class="error"></span>
+
+    <label for="tahun-lulus">Tahun Lulus:</label>
+    <input type="number" id="tahun-lulus" name="tahun-lulus">
+    <span id="error-tahun-lulus" class="error"></span>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <div id="errors" class="error"></div>
+  <br>
+  <div id="hasil"></div>
+</div>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+Berikut adalah contoh CSS untuk menambahkan gaya pada formulir pendaftaran ekstrakurikuler:
+
+```css
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-top: 0;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-bottom: 10px;
+}
+
+.form-container input, .form-container select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container input[type="text"], .form-container input[type="email"], .form-container input[type="number"] {
+  width: 100%;
+}
+
+.form-container select {
+  width: 100%;
+}
+
+.form-container button[type="button"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button[type="button"]:hover {
+  background-color: #3e8e41;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+#error-nama, #error-email, #error-no-telepon, #error-jenis-ekstrakurikuler, #error-tahun-masuk, #error-tahun-lulus {
+  display: none;
+}
+
+#error-nama.show, #error-email.show, #error-no-telepon.show, #error-jenis-ekstrakurikuler.show, #error-tahun-masuk.show, #error-tahun-lulus.show {
+  display: block;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::before {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::before {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-tahun-masuk.show::after, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#error-nama.show::before, #error-email.show::before, #error-no-telepon.show::before, #error-jenis-ekstrakurikuler.show::before, #error-tahun-masuk.show::before, #error-tahun-lulus.show::after {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+#error-nama.show::after, #error-email.show::after, #error-no-telepon.show::after, #error-jenis-ekstrakurikuler.show::after, #error-t
